@@ -1,0 +1,132 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">{{calculatorData.baseTable.pretFactura.name}}</th>
+          <th scope="col">{{calculatorData.baseTable.pretKwh.name}}</th>
+          <th style="width: 25%" scope="col">{{calculatorData.baseTable.kwhLuna.name}}</th>
+          <th style="width: 25%" scope="col">{{calculatorData.baseTable.kwhZi.name}}</th>
+          <th scope="col">{{calculatorData.baseTable.putereInstalataNecesara.name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><input [(ngModel)]="calculatorData.baseTable.pretFactura.value" placeholder="Introduceti pretul facturii" [maxlength]=7 (input)="refresh()"></td>
+          <td>{{calculatorData.baseTable.pretKwh.value| number: '1.0-2'}}</td>
+          <td>{{calculatorData.baseTable.kwhLuna.value| number: '1.0-2'}}</td>
+          <td>{{calculatorData.baseTable.kwhZi.value | number: '1.0-2'}}</td>
+          <td>{{calculatorData.baseTable.putereInstalataNecesara.value| number: '1.0-2'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">{{calculatorData.baseTable.watiPanouri.name}}</th>
+          <th style="width: 25%" scope="col">{{calculatorData.baseTable.nrPanouri.name}}</th>
+          <th style="width: 25%" scope="col">{{calculatorData.baseTable.supNecesar.name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{calculatorData.baseTable.watiPanouri.value| number: '1.0-2'}}</td>
+          <td>{{calculatorData.baseTable.nrPanouri.value| number: '1.0-2'}}</td>
+          <td>{{calculatorData.baseTable.supNecesar.value| number: '1.0-2'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th style="width: 25%">Putere instalata</th>
+          <th>kwH</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            {{calculatorData.putereInstalataSection.perOra.name}}
+          </td>
+          <td>
+            {{calculatorData.putereInstalataSection.perOra.value | number: '1.0-2'}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{calculatorData.putereInstalataSection.perLuna.name}}
+          </td>
+          <td>
+            {{calculatorData.putereInstalataSection.perLuna.value | number: '1.0-2'}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{calculatorData.putereInstalataSection.perAn.name}}
+          </td>
+          <td>
+            {{calculatorData.putereInstalataSection.perAn.value | number: '1.0-2'}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th style="width: 25%">Ecologic</th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+          <td>
+            {{calculatorData.ecologicSection.co2Salvat.name}}
+          </td>
+          <td>
+            {{calculatorData.ecologicSection.co2Salvat.value| number: '1.0-2'}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{calculatorData.ecologicSection.copaciSalvati.name}}
+          </td>
+          <td>
+            {{calculatorData.ecologicSection.copaciSalvati.value| number: '1.0-2'}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{calculatorData.ecologicSection.becuriAlimentate.name}}
+          </td>
+          <td>
+            {{calculatorData.ecologicSection.becuriAlimentate.value| number: '1.0-2'}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+</div>
+
