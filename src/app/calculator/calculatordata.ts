@@ -34,6 +34,42 @@ export class CalculatorData {
       value: number
     }
   };
+  putereInstalataSection: {
+    pi: {
+      name: string,
+      value: number
+    },
+    perOra: {
+      name: string,
+      value: number
+    },
+    perZi: {
+      name: string,
+      value: number
+    },
+    perLuna: {
+      name: string,
+      value: number
+    },
+    perAn: {
+      name: string,
+      value: number
+    }
+  };
+  ecologicSection: {
+    co2Salvat: {
+      name: string,
+      value: number
+    },
+    copaciSalvati: {
+      name: string,
+      value: number
+    },
+    becuriAlimentate: {
+      name: string,
+      value: number
+    }
+  };
   estimareTable: object;
   amortizareTable: object;
 }
