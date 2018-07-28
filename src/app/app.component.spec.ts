@@ -16,12 +16,12 @@ describe('AppComponent', () => {
   it(`should have as title 'calculator-energie-solara'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('calculator-energie-solara');
+    expect(app.title).toEqual('calculatordata-energie-solara');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to calculator-energie-solara!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to calculatordata-energie-solara!');
   }));
 });
