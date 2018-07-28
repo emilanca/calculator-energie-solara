@@ -21,7 +21,6 @@
         </tbody>
       </table>
     </div>
-
   </div>
 
 
@@ -31,7 +30,7 @@
         <thead class="thead-light">
         <tr>
           <th style="width: 25%">Putere instalata</th>
-          <th>kwH</th>
+          <th>kWh</th>
         </tr>
         </thead>
         <tbody>
@@ -103,25 +102,43 @@
     </div>
   </div>
 
-  <!--<div class="row">-->
-    <!--<div class="col">-->
-  <div>
-    <ngx-charts-bar-vertical
-      [scheme]="colorScheme"
-      [results]="single"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-      (select)="onSelect($event)">
-    </ngx-charts-bar-vertical>
-  </div>
+  <div class="row">
+    <div class="col" style="width: 50%">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th colspan="5">Estimare energie si economii</th>
+        </tr>
+        </thead>
 
-    <!--</div>-->
-  <!--</div>-->
+        <tbody>
+        <tr *ngFor="let month of calculatorData.estimareTable.luni">
+          <td width="10%">{{month.name}}</td>
+          <td width="20%">{{month.valueKwh | number: '1.0-0'}}</td>
+          <td width="35%">kWh</td>
+          <td width="20%">{{month.valueEco | number: '1.0-0'}}</td>
+          <td>RON</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col" style="width: 50%">
+      <ngx-charts-bar-vertical
+        [scheme]="colorScheme"
+        [results]="graphData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+
+    </div>
+  </div>
 </div>
 

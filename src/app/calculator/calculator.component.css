@@ -1,2 +1,15 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
+
+
+.thead-light th {
+  background-color: #75a9d3 !important;
+  border-color: #75a9d3 !important;
+  color: white !important;
+}
+
+table {
+  font-family: "Cabin", Arial, Helvetica, sans-serif;
+}
+
+

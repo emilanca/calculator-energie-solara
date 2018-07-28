@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CalculatorInitData, CalculatorData} from "./calculatordata";
+import {CalculatorInitData, CalculatorData, luna} from "./calculatordata";
 
 @Component({
   selector: 'app-calculator',
@@ -9,6 +9,7 @@ import {CalculatorInitData, CalculatorData} from "./calculatordata";
 export class CalculatorComponent implements OnInit {
 
   calculatorData : CalculatorData = CalculatorInitData;
+  graphData;
 
   constructor() { }
 
@@ -33,6 +34,29 @@ export class CalculatorComponent implements OnInit {
     this.calculatorData.ecologicSection.co2Salvat.value = this.calculatorData.putereInstalataSection.perZi.value* 0.392;
     this.calculatorData.ecologicSection.copaciSalvati.value = this.calculatorData.putereInstalataSection.perLuna.value* 1.31;
     this.calculatorData.ecologicSection.becuriAlimentate.value = this.calculatorData.putereInstalataSection.perAn.value* 3.03;
+
+    //estimare
+
+    const constEstimare = this.calculatorData.putereInstalataSection.perAn.value;
+    const preKwh = this.calculatorData.baseTable.pretKwh.value;
+    let monthArray = this.calculatorData.estimareTable.luni;
+    monthArray.map(value => {
+        value.valueKwh=constEstimare*value.valueConst/100;
+        value.valueEco=preKwh*value.valueKwh;
+      }
+    );
+
+    this.graphData = this.calculatorData.estimareTable.luni.map(
+      element =>
+      {
+        //let random = Math.floor(Math.random() * (999999 - 100000)) + 100000; SWEETNESS
+        let result = {
+          "name": element.name,
+          "value": element.valueKwh
+        };
+        return result;
+      }
+    );
   }
 
   // First CHART
@@ -54,27 +78,6 @@ export class CalculatorComponent implements OnInit {
     console.log(event);
   }
 
-  single = [
-    {
-      "name": "Ianuarie",
-      "value": 8940000
-    },
-    {
-      "name": "Februarie",
-      "value": 5000000
-    },
-    {
-      "name": "Martie",
-      "value": 7200000
-    },
-    {
-      "name": "Aprilie",
-      "value": 5200000
-    },
-    {
-      "name": "Mai",
-      "value": 3200000
-    }
-  ];
+
   // END of First Chart
 }
