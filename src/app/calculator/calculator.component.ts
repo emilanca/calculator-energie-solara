@@ -46,6 +46,15 @@ export class CalculatorComponent implements OnInit {
       }
     );
 
+    this.calculatorData.estimareTable.medie.valueKwh = monthArray.map(
+      value => value.valueKwh
+    ).reduce((a,b) => a+b)/this.calculatorData.estimareTable.luni.length;
+
+    this.calculatorData.estimareTable.medie.valueEco =this.calculatorData.estimareTable.medie.valueKwh * preKwh;
+
+    this.calculatorData.estimareTable.economiiRon = monthArray.map(value=> value.valueEco).reduce((a,b) => a+b);
+    this.calculatorData.estimareTable.economiiEur =this.calculatorData.estimareTable.economiiRon / 4.6;
+
     this.graphData = this.calculatorData.estimareTable.luni.map(
       element =>
       {
@@ -68,7 +77,7 @@ export class CalculatorComponent implements OnInit {
   showXAxisLabel = true;
   xAxisLabel = 'Energie estimata';
   showYAxisLabel = true;
-  yAxisLabel = 'kwh';
+  yAxisLabel = 'kWh';
 
   colorScheme = {
     domain: ['#4682B4']

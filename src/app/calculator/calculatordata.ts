@@ -77,7 +77,11 @@ export class CalculatorData {
     }
   };
   estimareTable: {
-    luni : luna[]
+    luni : luna[],
+    medie: luna,
+    economiiRon: number,
+    economiiEur: number
+
 
   };
   amortizareTable: object;
@@ -216,7 +220,14 @@ export var CalculatorInitData = {
         valueEco: 0,
         valueConst: 3.4
       }
-    ]
+    ],
+    medie: {name: "Medie",
+      valueKwh: 0,
+      valueEco: 0,
+      valueConst: 100
+    },
+    economiiRon: 0,
+    economiiEur: 0
   },
   amortizareTable: {},
   id: 1

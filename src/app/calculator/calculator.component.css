@@ -7,6 +7,11 @@
   border-color: #75a9d3 !important;
   color: white !important;
 }
+/*tfoot th {*/
+  /*background-color: red !important;*/
+  /*border-color: #75a9d3 !important;*/
+  /*color: white !important;*/
+/*}*/
 
 table {
   font-family: "Cabin", Arial, Helvetica, sans-serif;

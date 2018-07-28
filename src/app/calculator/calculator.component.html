@@ -111,6 +111,29 @@
         </tr>
         </thead>
 
+        <tfoot style="background-color: #e6f7ff">
+
+        <tr>
+          <th rowspan="3">{{calculatorData.estimareTable.medie.name}}</th>
+          <th rowspan="3">{{calculatorData.estimareTable.medie.valueKwh | number: '1.0-0'}}</th>
+          <th width="35%">kWh</th>
+          <th >{{calculatorData.estimareTable.medie.valueEco | number: '1.0-0'}}</th>
+          <th>RON</th>
+        </tr>
+        <tr>
+
+          <th> Economii pe an RON</th>
+          <th>{{calculatorData.estimareTable.economiiRon | number: '1.0-0'}}</th>
+          <th>RON</th>
+        </tr>
+        <tr>
+
+          <th> Economii pe an EUR</th>
+          <th>{{calculatorData.estimareTable.economiiEur | number: '1.0-0'}}</th>
+          <th>EUR</th>
+        </tr>
+        </tfoot>
+
         <tbody>
         <tr *ngFor="let month of calculatorData.estimareTable.luni">
           <td width="10%">{{month.name}}</td>
@@ -120,6 +143,8 @@
           <td>RON</td>
         </tr>
         </tbody>
+
+
       </table>
     </div>
 
