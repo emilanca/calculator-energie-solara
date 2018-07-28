@@ -70,8 +70,87 @@ export class CalculatorData {
       value: number
     }
   };
-  estimareTable: object;
+  estimareTable: {
+
+  };
   amortizareTable: object;
 }
+
+export var CalculatorInitData = {
+  baseTable: {
+    pretFactura: {
+      name: "Pret Factura",
+        value: 500
+    },
+    pretKwh: {
+      name: "Pret kwh",
+        value: 0.57
+    },
+    kwhLuna: {
+      name: "Kwh/luna",
+        value: 0
+    },
+    kwhZi: {
+      name: "Kwh/zi",
+        value: 0
+    },
+    putereInstalataNecesara: {
+      name: "Putere instalata necesara",
+        value: 0
+    },
+    watiPanouri: {
+      name: "Wati Panouri",
+        value: 0.275
+    },
+    nrPanouri: {
+      name: "Numar panouri",
+        value: 0
+    },
+    supNecesar: {
+      name: "Supliment necesar",
+        value: 0
+    }
+  },
+  putereInstalataSection: {
+    pi: {
+      name: "Putere instalata",
+        value: 3.5
+    },
+    perOra: {
+      name: "Orara",
+        value: 0
+    },
+    perZi: {
+      name: "Zilnica",
+        value: 0
+    },
+    perLuna: {
+      name: "Lunara",
+        value: 0
+    },
+    perAn: {
+      name: "Anuala",
+        value: 0
+    }
+  },
+  ecologicSection: {
+    co2Salvat: {
+      name: "CO2 Salvat(Tone)",
+        value: 0
+    },
+    copaciSalvati: {
+      name: "Copaci salvati",
+        value: 0
+    },
+    becuriAlimentate: {
+      name: "Becuri alimentate",
+        value: 0
+    }
+  },
+  estimareTable: {},
+  amortizareTable: {},
+  id: 1
+};
+
 
 

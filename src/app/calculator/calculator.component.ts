@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CalculatorData} from "./calculatordata";
+import {CalculatorInitData, CalculatorData} from "./calculatordata";
 
 @Component({
   selector: 'app-calculator',
@@ -8,81 +8,7 @@ import {CalculatorData} from "./calculatordata";
 })
 export class CalculatorComponent implements OnInit {
 
-  calculatorData : CalculatorData = {
-    baseTable: {
-      pretFactura: {
-        name: "Pret Factura",
-        value: 500
-      },
-      pretKwh: {
-        name: "Pret kwh",
-        value: 0.57
-      },
-      kwhLuna: {
-        name: "Kwh/luna",
-        value: 0
-      },
-      kwhZi: {
-        name: "Kwh/zi",
-        value: 0
-      },
-      putereInstalataNecesara: {
-        name: "Putere inst. nec.",
-        value: 0
-      },
-      watiPanouri: {
-        name: "Wati Panouri",
-        value: 0.275
-      },
-      nrPanouri: {
-        name: "Numar panouri",
-        value: 0
-      },
-      supNecesar: {
-        name: "Supl. nec.",
-        value: 0
-      }
-    },
-    putereInstalataSection: {
-      pi: {
-        name: "Putere instalata",
-        value: 3.5
-      },
-      perOra: {
-        name: "Orara",
-        value: 0
-      },
-      perZi: {
-        name: "Zilnica",
-        value: 0
-      },
-      perLuna: {
-        name: "Lunara",
-        value: 0
-      },
-      perAn: {
-        name: "Anuala",
-        value: 0
-      }
-    },
-    ecologicSection: {
-      co2Salvat: {
-        name: "CO2 Salvat(Tone)",
-        value: 0
-      },
-      copaciSalvati: {
-        name: "Copaci salvati",
-        value: 0
-      },
-      becuriAlimentate: {
-        name: "Becuri alimentate",
-        value: 0
-      }
-    },
-    estimareTable: {},
-    amortizareTable: {},
-    id: 1
-  };
+  calculatorData : CalculatorData = CalculatorInitData;
 
   constructor() { }
 
@@ -109,4 +35,46 @@ export class CalculatorComponent implements OnInit {
     this.calculatorData.ecologicSection.becuriAlimentate.value = this.calculatorData.putereInstalataSection.perAn.value* 3.03;
   }
 
+  // First CHART
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = true;
+  showLegend = false;
+  showXAxisLabel = true;
+  xAxisLabel = 'Energie estimata';
+  showYAxisLabel = true;
+  yAxisLabel = 'kwh';
+
+  colorScheme = {
+    domain: ['#4682B4']
+  };
+
+  onSelect(event) {
+    console.log(event);
+  }
+
+  single = [
+    {
+      "name": "Ianuarie",
+      "value": 8940000
+    },
+    {
+      "name": "Februarie",
+      "value": 5000000
+    },
+    {
+      "name": "Martie",
+      "value": 7200000
+    },
+    {
+      "name": "Aprilie",
+      "value": 5200000
+    },
+    {
+      "name": "Mai",
+      "value": 3200000
+    }
+  ];
+  // END of First Chart
 }

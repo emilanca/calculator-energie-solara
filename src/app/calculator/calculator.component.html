@@ -6,39 +6,15 @@
         <thead class="thead-light">
         <tr>
           <th scope="col">{{calculatorData.baseTable.pretFactura.name}}</th>
-          <th scope="col">{{calculatorData.baseTable.pretKwh.name}}</th>
-          <th style="width: 25%" scope="col">{{calculatorData.baseTable.kwhLuna.name}}</th>
-          <th style="width: 25%" scope="col">{{calculatorData.baseTable.kwhZi.name}}</th>
           <th scope="col">{{calculatorData.baseTable.putereInstalataNecesara.name}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td><input [(ngModel)]="calculatorData.baseTable.pretFactura.value" placeholder="Introduceti pretul facturii" [maxlength]=7 (input)="refresh()"></td>
-          <td>{{calculatorData.baseTable.pretKwh.value| number: '1.0-2'}}</td>
-          <td>{{calculatorData.baseTable.kwhLuna.value| number: '1.0-2'}}</td>
-          <td>{{calculatorData.baseTable.kwhZi.value | number: '1.0-2'}}</td>
-          <td>{{calculatorData.baseTable.putereInstalataNecesara.value| number: '1.0-2'}}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <table class="table">
-        <thead class="thead-light">
-        <tr>
-          <th scope="col">{{calculatorData.baseTable.watiPanouri.name}}</th>
           <th style="width: 25%" scope="col">{{calculatorData.baseTable.nrPanouri.name}}</th>
           <th style="width: 25%" scope="col">{{calculatorData.baseTable.supNecesar.name}}</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>{{calculatorData.baseTable.watiPanouri.value| number: '1.0-2'}}</td>
+          <td><input [(ngModel)]="calculatorData.baseTable.pretFactura.value" placeholder="Introduceti pretul facturii" [maxlength]=7 (input)="refresh()"></td>
+          <td>{{calculatorData.baseTable.putereInstalataNecesara.value| number: '1.0-2'}}</td>
           <td>{{calculatorData.baseTable.nrPanouri.value| number: '1.0-2'}}</td>
           <td>{{calculatorData.baseTable.supNecesar.value| number: '1.0-2'}}</td>
         </tr>
@@ -47,6 +23,7 @@
     </div>
 
   </div>
+
 
   <div class="row">
     <div class="col">
@@ -126,7 +103,25 @@
     </div>
   </div>
 
+  <!--<div class="row">-->
+    <!--<div class="col">-->
+  <div>
+    <ngx-charts-bar-vertical
+      [scheme]="colorScheme"
+      [results]="single"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+  </div>
 
-
+    <!--</div>-->
+  <!--</div>-->
 </div>
 
