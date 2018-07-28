@@ -13,7 +13,7 @@
         </thead>
         <tbody>
         <tr>
-          <td><input [(ngModel)]="calculatorData.baseTable.pretFactura.value" placeholder="Introduceti pretul facturii" [maxlength]=7 (input)="refresh()"></td>
+          <td><input [(ngModel)]="calculatorData.baseTable.pretFactura.value" placeholder="Introduceti pretul facturii" [maxlength]=7 (input)="refresh()" style="background-color: #FFFF99">RON</td>
           <td>{{calculatorData.baseTable.putereInstalataNecesara.value| number: '1.0-2'}}</td>
           <td>{{calculatorData.baseTable.nrPanouri.value| number: '1.0-2'}}</td>
           <td>{{calculatorData.baseTable.supNecesar.value| number: '1.0-2'}}</td>
@@ -29,7 +29,7 @@
       <table class="table">
         <thead class="thead-light">
         <tr>
-          <th style="width: 25%">Putere instalata</th>
+          <th style="width: 30%">Putere instalata</th>
           <th>kWh</th>
         </tr>
         </thead>
@@ -66,7 +66,7 @@
       <table class="table">
         <thead class="thead-light">
         <tr>
-          <th style="width: 25%">Ecologic</th>
+          <th style="width: 40%">Ecologic</th>
           <th></th>
         </tr>
         </thead>

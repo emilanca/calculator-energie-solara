@@ -206,7 +206,7 @@ export var CalculatorInitData = {
         valueEco: 0,
         valueConst: 7.5
       },
-      {name: "Noi",
+      {name: "Nov",
         valueKwh: 0,
         valueEco: 0,
         valueConst: 4.9
