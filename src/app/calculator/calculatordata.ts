@@ -4,6 +4,12 @@ export class luna {
   valueEco: number;
   valueConst: number;
 }
+export class amortizareTablerow {
+  year: number;
+  value: number;
+  economiiYearlyValue: number;
+  amortizareYearlyValue: number;
+}
 export class CalculatorData {
   id: number;
   baseTable: {
@@ -84,7 +90,9 @@ export class CalculatorData {
 
 
   };
-  amortizareTable: object;
+  amortizareTable: {
+    rows: amortizareTablerow[]
+  };
 }
 
 export var CalculatorInitData = {
@@ -229,7 +237,10 @@ export var CalculatorInitData = {
     economiiRon: 0,
     economiiEur: 0
   },
-  amortizareTable: {},
+  amortizareTable: {
+    rows: [],
+
+  },
   id: 1
 };
 

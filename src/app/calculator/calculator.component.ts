@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {CalculatorInitData, CalculatorData, luna} from "./calculatordata";
+import {Component, OnInit} from '@angular/core';
+import {amortizareTablerow, CalculatorData, CalculatorInitData} from "./calculatordata";
 
 @Component({
   selector: 'app-calculator',
@@ -10,6 +10,7 @@ export class CalculatorComponent implements OnInit {
 
   calculatorData : CalculatorData = CalculatorInitData;
   graphData;
+  amortizareGraphData;
 
   constructor() { }
 
@@ -66,7 +67,42 @@ export class CalculatorComponent implements OnInit {
         return result;
       }
     );
+
+    // amortizarea investitiei
+
+    let amortizareTableRows : amortizareTablerow[] = [];
+    let initialRow : amortizareTablerow  = new amortizareTablerow();
+    initialRow.year=new Date().getFullYear();
+    initialRow.economiiYearlyValue=this.calculatorData.estimareTable.economiiEur;
+    initialRow.value=initialRow.economiiYearlyValue;
+    initialRow.amortizareYearlyValue=initialRow.economiiYearlyValue*(3/100); // 3% hardcoded
+
+    amortizareTableRows.push(initialRow);
+
+    for (let _year = 1; _year < 20; _year++) {
+      let row : amortizareTablerow = new amortizareTablerow();
+      let prevRow : amortizareTablerow = amortizareTableRows[amortizareTableRows.length-1];
+      row.year = amortizareTableRows[0].year+_year;
+      row.economiiYearlyValue =  prevRow.economiiYearlyValue+prevRow.amortizareYearlyValue;
+      row.value = prevRow.value+row.economiiYearlyValue;
+      row.amortizareYearlyValue = row.economiiYearlyValue*(3/100); // 3% hardcoded
+      amortizareTableRows.push(row)
+    }
+    this.calculatorData.amortizareTable.rows = amortizareTableRows;
+
+    this.amortizareGraphData = this.calculatorData.amortizareTable.rows.map(
+      row =>
+      {
+        return {
+          "name": row.year + 1 - new Date().getFullYear(),
+          "value": row.value
+        };
+      }
+    );
+
   }
+
+
 
   // First CHART
   // options

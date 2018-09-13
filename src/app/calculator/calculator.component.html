@@ -165,5 +165,73 @@
 
     </div>
   </div>
+
+
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th colspan="5">Amortizarea investitiei</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let row of calculatorData.amortizareTable.rows">
+
+          <td>{{row.year}}</td>
+          <td>{{row.value | number: '1.0-0'}} EUR</td>
+          <!--<td width="35%">kWh</td>-->
+          <!--<td width="20%">{{month.valueEco | number: '1.0-0'}}</td>-->
+        </tr>
+        </tbody>
+
+
+      </table>
+    </div>
+
+    <div class="col">
+      <ngx-charts-bar-vertical
+        [scheme]="colorScheme"
+        [results]="amortizareGraphData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]=false
+        [showYAxisLabel]=false
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        <br/>
+        <br/>
+        <p>În timp ce energia la rețeaua electrică națională crește cu minim 3% pe an, costul energiei solare produse de sistemul fotovoltaic rămâne în mod constant mai redus.
+          <br/>
+          <b>{{1070*calculatorData.baseTable.putereInstalataNecesara.value| number: '1.0-0' }} EUR</b> investitie
+          <b>{{calculatorData.amortizareTable.rows[calculatorData.amortizareTable.rows.length-1].value| number: '1.0-0' }} EUR</b> suma economisita in 20 de ani
+
+          <br/>
+        <p>Obtineti:</p>
+        <ul>
+          <li>Independență față de prețurile energiei electrice și furnizorii de energie.</li>
+          <li>Adaptarea modelelor dvs. de consum permite economii suplimentare. </li>
+          <li>Scădere majoră a costurilor energiei electrice.</li>
+          <li>Costuri de operare mai mici.</li>
+          <li>Energie electrică  mai ieftină din prima zi de funcționare pe întreaga durată de viață a sistemului fotovoltaic.</li>
+          <li>Contribuție constructivă la procesul de combatere a încălzirii globale.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
 
