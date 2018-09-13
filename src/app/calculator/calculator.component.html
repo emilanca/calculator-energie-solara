@@ -178,11 +178,8 @@
 
         <tbody>
         <tr *ngFor="let row of calculatorData.amortizareTable.rows">
-
-          <td>{{row.year}}</td>
-          <td>{{row.value | number: '1.0-0'}} EUR</td>
-          <!--<td width="35%">kWh</td>-->
-          <!--<td width="20%">{{month.valueEco | number: '1.0-0'}}</td>-->
+          <td width="25%">{{row.year}}</td>
+          <td width="75%">{{row.value | number: '1.0-0'}} EUR</td>
         </tr>
         </tbody>
 
@@ -190,7 +187,7 @@
       </table>
     </div>
 
-    <div class="col">
+    <div class="col" style="width: 50%">
       <ngx-charts-bar-vertical
         [scheme]="colorScheme"
         [results]="amortizareGraphData"
